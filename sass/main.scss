@@ -1,0 +1,77 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+#cards{
+    margin: 5%;
+    display: flex;
+    padding:10px;
+    border-style: solid;
+}
+button{
+    border-radius: 5%;
+}
+// .container{
+//     position: absolute;
+//     height: 200px;
+//     top: 50%;
+//     left: 50%;
+//     margin: -100px 0 0 -150px;
+//     z-index: 15;
+// }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*Phone Number Input "hack"*/
+.phone-number .col-xs-3::after{
+ content: "-";
+ position:absolute;
+    right: 5px;
+    color: black;
+    border: 0px solid;
+    top: 5px;
+}
+
+.phone-number .col-xs-4{
+    width:25%;
+}
+
+.phone-number .col-xs-3, .phone-number .col-xs-4{
+
+    padding-left:0;
+}

@@ -1,0 +1,28 @@
+{
+
+"contacts":{
+  "contact0":{
+    "name":"Zoe",
+    "phone":"777-7777",
+    "isCompleted":true,
+    "email":"Zoe@yahoo.com",
+    "address":"3 West St Nashville, TN 37230"
+
+    },
+    "contact1":{
+      "name":"William",
+      "phone":"888-8888",
+      "isCompleted":false,
+      "email":"William@gmail.com",
+      "address":"1 North St Nashville, TN 37200"
+
+    },
+    "contact2":{
+      "name":"Bill",
+      "phone":"999-9999",
+      "isCompleted":false,
+      "email":"bill@yahoo.com",
+      "address":"123 Main St Nashville, TN 37210"
+    }
+}
+}
