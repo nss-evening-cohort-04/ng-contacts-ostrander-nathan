@@ -23,9 +23,11 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG){
 		return $q((resolve,reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, 
 			JSON.stringify({
-				assignedTo: newItem.assignedTo,
+				name: newItem.name,
+				address: newItem.address,
 				isCompleted: newItem.isCompleted,
-				task:newItem.task
+				email:newItem.email,
+				phone:newItem.phone
 				})
 			)
 				 .success(function(postResponse){

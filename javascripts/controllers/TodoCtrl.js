@@ -8,12 +8,13 @@ app.controller("TodoCtrl", function($scope, itemFactory){
 	$scope.newContact = {};
 	$scope.items = [];
 
+
 	var formData = {
 		name: "default",
 		email: "default",
 		phone: "default",
 		address: "default"
-	}
+	};
 
 	let getItems = function(){
 		itemFactory.getItemList().then(function(fbItems){
@@ -37,15 +38,15 @@ app.controller("TodoCtrl", function($scope, itemFactory){
 	// 	console.log("you clicked newGroup")
 	// };	
 	$scope.editContact = function(){
-		console.log("you clicked editContact")
+		console.log("you clicked editContact");
 	};
 	$scope.addGroup = function(){
 
 	};
-
+	
 	$scope.addNewContact = function(){
-		// $scope.newContact.isCompleted = true;
-		console.log("newContact in functon",$scope.newContact );
+		$scope.newContact.isCompleted = true;
+		console.log("newContact in function",$scope.newContact );
 		itemFactory.postNewContact($scope.newContact).then(function(itemId){
 			getItems();
 			$scope.newContact = {};

@@ -63,65 +63,56 @@
 <!-- HOME OF CONTACTS -->
 <div ng-controller="TodoCtrl">
 
-
   <form>
     <div class="container">
       <div class="form-group">
         <div class="col-xs-4">
           <h1>New Contact</h1>
-          <input type="text" class="form-control" placeholder="Name" ng-model="user.name" required>
-          <input type="email" class="form-control" placeholder="Email" ng-model="user.email" required>
+          <input type="text" class="form-control" placeholder="Name" ng-model="newContact.name" required> 
+          <input type="text" class="form-control" placeholder="Address" ng-model="newContact.address" required>
+          <input type="email" class="form-control" placeholder="Email" ng-model="newContact.email" required>
           <div class="form-group phone-number">
             <div class="col-xs-3">
-              <input type="tel" name="phone" class="form-control" value="" size="3" maxlength="3" required title="" placeholder="Phone" ng-model="user.phone">
+              <input type="tel" name="phone" class="form-control" value="" size="3" maxlength="3" required title="" placeholder="Phone" ng-model="newContact.phone">
             </div>
             <div class="col-xs-3">
-              <input type="tel" name="phone" class="form-control" value="" size="3" maxlength="3" required title="" ng-model="user.phone">
+              <input type="tel" name="phone" class="form-control" value="" size="3" maxlength="3" required title="" ng-model="newContact.phone">
             </div>
             <div class="col-xs-4">
-              <input type="tel" name="phone" class="form-control" value="" size="4" maxlength="4" required title="" ng-model="user.phone">
+              <input type="tel" name="phone" class="form-control" value="" size="4" maxlength="4" required title="" ng-model="newContact.phone">
             </div>
-            <div>
               <button type="button" class="btn btn-primary btn-md" ng-click="addNewContact()">Add to Contacts</button>
-            </div>
-            <div>
-              <button type="button" class="btn btn-primary btn-md" ng-click="reset()">Reset</button>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </form>
-  <div ng-show="homeView">
-    <div class="panel-body">
-      <div class="row" id="cards">
-        <div class="card card-block" style="width: 100%;">
-          <!-- <h3 class="card-header">{{thing.name}}</h3> -->
-          <div class="col-sm-4" ng-repeat="thing in items">
-            <h3 class="card-title">{{thing.name || 'empty'}}</h3></div>
-          <div class="col-sm-4" ng-repeat="thing in items">
-            <p class="card-text">{{thing.address || 'empty'}}</p>
-          </div>
-          <div class="col-sm-4" ng-repeat="thing in items">
-            <p class="card-text">{{thing.email || 'empty'}}</p>
-          </div>
-          <div class="col-sm-4" ng-repeat="thing in items">
-            <p class="card-text">{{thing.phone || 'empty'}}</p>
-          </div>
+<div ng-show="homeView">
+  <div class="panel-body">
+    <div id="cards">
+      <div class="card card-block" style="width: 100%;">
+        <div class="col-sm-4" ng-repeat="thing in items">
+          <h3 class="card-title">{{thing.name || 'empty'}}</h3>
+          <p class="card-text">{{thing.address || 'empty'}}</p>
+          <p class="card-text">{{thing.email || 'empty'}}</p>
+          <p class="card-text">{{thing.phone || 'empty'}}</p>
           <a href="#" class="btn btn-primary" ng-click="addGroup()">Add to Group</a>
           <a href="#" class="btn btn-primary" ng-click="editContact()">Edit</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
     <!-- GROUP DISPLAY -->
     <!-- <div ng-show="!addGroupView"> -->
-    <div class="panel-body">
+  <!--   <div class="panel-body">
       <div class="row">
         <div class="col-sm-4">.col-sm-4</div>
         <div class="col-sm-4">.col-sm-4</div>
         <div class="col-sm-4">.col-sm-4</div>
       </div>
-    </div>
+    </div> -->
   </div>
        
         <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
