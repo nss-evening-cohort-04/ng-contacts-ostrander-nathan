@@ -20,6 +20,8 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
   }
 
   var postNewContact = function(newItem) {
+		console.log("newItem",newItem );
+
     return $q((resolve, reject) => {
       $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`,
           JSON.stringify({
@@ -32,6 +34,7 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         )
         .success(function(postResponse) {
           resolve(postResponse);
+        console.log("postResponse",postResponse )
         })
         .error(function(postError) {
           reject(postError);
@@ -62,16 +65,17 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         })
     })
   };
-  
+
   var editItem = function(editItem) {
-    return $q((resolve, reject) => { // promise
+  	console.log("editItem",editItem );
+    return $q((resolve, reject) => { 
       $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${editItem.id}.json`,
           JSON.stringify({
-            name: newItem.name,
-            address: newItem.address,
-            isCompleted: newItem.isCompleted,
-            email: newItem.email,
-            phone: newItem.phone + '-' + newItem.phone1 + '-' + newItem.phone2
+            name: editItem.name,
+            address: editItem.address,
+            isCompleted: editItem.isCompleted,
+            email: editItem.email,
+            phone: editItem.phone + '-' + editItem.phone1 + '-' + editItem.phone2
           })
         )
         .success(function(editResponse) {

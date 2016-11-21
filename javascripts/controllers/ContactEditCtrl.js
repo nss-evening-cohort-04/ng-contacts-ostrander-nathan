@@ -16,12 +16,4 @@ $scope.newTask = {};
 			$location.url("/contacts/list");
 		})
 	}
-	$scope.addNewContact = function(){
-		$scope.newContact.isCompleted = true;
-		console.log("newContact in function",$scope.newContact );
-		itemFactory.postNewContact($scope.newContact).then(function(itemId){
-			getItems();
-			$scope.newContact = {};
-		});
-	};
 })

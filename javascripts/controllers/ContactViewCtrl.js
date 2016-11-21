@@ -1,5 +1,5 @@
 "use strict";
-app.controller("ItemViewCtrl", function($scope, $routeParams, itemFactory){
+app.controller("ContactViewCtrl", function($scope, $routeParams, itemFactory){
 	$scope.selectedItem = {};
 	let itemId = $routeParams.id;
 

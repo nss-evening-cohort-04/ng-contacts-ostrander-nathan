@@ -9,9 +9,15 @@ app.controller("ContactListCtrl", function($scope, itemFactory){
 	}
 	getItems(); // call getItems function
 
-	$scope.deleteItem = function(itemId){
+	$scope.deleteContact = function(itemId){
 		console.log("you deleted me");
-		itemFactory.deleteItem(itemId).then(function(response){
+		itemFactory.deleteContact(itemId).then(function(response){
+			getItems();
+		})
+	}	
+	$scope.editContact = function(itemId){
+		console.log("you edited me");
+		itemFactory.editItem(itemId).then(function(response){
 			getItems();
 		})
 	}

@@ -1,12 +1,14 @@
 <div id="cards">
   <div class="card card-block" style="width: 100%;">
     <div class="col-sm-4" ng-repeat="thing in items">
+    <div><a href="#/contacts/view/{{thing.id}}"></a></div>
       <h3 class="card-title">{{thing.name || 'empty'}}</h3>
       <p class="card-text">{{thing.address || 'empty'}}</p>
       <p class="card-text">{{thing.email || 'empty'}}</p>
       <p class="card-text">{{thing.phone || 'empty'}}</p>
       <a href="#" class="btn btn-primary" ng-click="addGroup()">Add to Group</a>
-      <a href="#" class="btn btn-primary" ng-click="editContact()">Edit</a>
+      <a href="#" class="btn btn-primary" ng-click="editContact(thing.id)">Edit</a>
+      <button class="btn btn-danger fa fa-trash-o" ng-click="deleteContact(thing.id)"></button>
     </div>
   </div>
 </div>
