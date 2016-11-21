@@ -1,0 +1,12 @@
+<div id="cards">
+  <div class="card card-block" style="width: 100%;">
+    <div class="col-sm-4" ng-repeat="thing in items">
+      <h3 class="card-title">{{thing.name || 'empty'}}</h3>
+      <p class="card-text">{{thing.address || 'empty'}}</p>
+      <p class="card-text">{{thing.email || 'empty'}}</p>
+      <p class="card-text">{{thing.phone || 'empty'}}</p>
+      <a href="#" class="btn btn-primary" ng-click="addGroup()">Add to Group</a>
+      <a href="#" class="btn btn-primary" ng-click="editContact()">Edit</a>
+    </div>
+  </div>
+</div>
