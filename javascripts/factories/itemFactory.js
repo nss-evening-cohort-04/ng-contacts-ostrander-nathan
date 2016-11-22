@@ -9,15 +9,15 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
           let items = [];
           Object.keys(response).forEach(function(key) {
             response[key].id = key;
-            items.push(response[key])
+            items.push(response[key]);
           });
           resolve(items);
         })
         .error(function(errorResponse) {
           reject(errorResponse);
-        })
-    })
-  }
+        });
+    });
+  };
 
   var postNewContact = function(newItem) {
 		console.log("newItem",newItem );
@@ -34,13 +34,13 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         )
         .success(function(postResponse) {
           resolve(postResponse);
-        console.log("postResponse",postResponse )
+        console.log("postResponse",postResponse );
         })
         .error(function(postError) {
           reject(postError);
-        })
-    })
-  }
+        });
+    });
+  };
 
   var getSingleItem = function(itemId) {
     return $q((resolve, reject) => {
@@ -50,8 +50,8 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         })
         .error(function(getSingleError) {
           reject(getSingleError);
-        })
-    })
+        });
+    });
   };
 
   var deleteContact = function(itemId) {
@@ -62,8 +62,8 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         })
         .error(function(deleteError) {
           reject(deleteError);
-        })
-    })
+        });
+    });
   };
 
   var editItem = function(editItem) {
@@ -83,9 +83,9 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
         })
         .error(function(editError) {
           reject(editError);
-        })
-    })
-  }
+        });
+    });
+  };
 
   return {
     getItemList: getItemList,
@@ -93,6 +93,6 @@ app.factory("itemFactory", function($q, $http, FIREBASE_CONFIG) {
     deleteContact: deleteContact,
     editItem: editItem,
     getSingleItem: getSingleItem
-  }
+  };
 
-})
+});

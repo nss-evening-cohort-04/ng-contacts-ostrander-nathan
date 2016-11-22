@@ -3,7 +3,7 @@
 app.run(function(FIREBASE_CONFIG){
 	firebase.initializeApp(FIREBASE_CONFIG);
 
-})
+});
 app.config(function($routeProvider){ /// only used for routes no DOM manipulation
 	$routeProvider
 		.when('/contacts/list',{
@@ -23,4 +23,4 @@ app.config(function($routeProvider){ /// only used for routes no DOM manipulatio
 			controller: 'ContactEditCtrl'
 		})
 		.otherwise('/contacts/list') // redirects to what you want to direct
-})
+});

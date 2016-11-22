@@ -7,5 +7,5 @@ app.controller("ContactViewCtrl", function($scope, $routeParams, itemFactory){
 		oneItem.id = itemId;
 		console.log("oneItem view",oneItem );
 		$scope.selectedItem = oneItem;
-	})
-})
+	});
+});
