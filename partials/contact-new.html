@@ -3,21 +3,22 @@
     <div class="form-group">
       <div class="col-xs-4">
         <h1>New Contact</h1>
-        <input type="text" class="form-control" placeholder="Name" ng-model="user.name" required>
-        <input type="email" class="form-control" placeholder="Email" ng-model="user.email" required>
+        <input type="text" class="form-control" placeholder="Name" ng-model="newUser.name" required>
+        <input type="email" class="form-control" placeholder="Address" ng-model="newUser.email" required>
+        <input type="email" class="form-control" placeholder="Email" ng-model="newUser.address" required>
         <div class="form-group phone-number">
           <div class="col-xs-3">
-            <input type="tel" name="phone" class="form-control" size="3" maxlength="3" required title="" placeholder="Phone" ng-model="user.phone">
+            <input type="tel" name="phone" class="form-control" size="3" maxlength="3" required title="" placeholder="Phone" ng-model="newUser.phone">
           </div>
           <div class="col-xs-3">
-            <input type="tel" name="phone" class="form-control" size="3" maxlength="3" required title="" ng-model="user.phone1">
+            <input type="tel" name="phone" class="form-control" size="3" maxlength="3" required title="" ng-model="newUser.phone1">
           </div>
           <div class="col-xs-4">
-            <input type="tel" name="phone" class="form-control" size="4" maxlength="4" required title="" ng-model="user.phone2">
+            <input type="tel" name="phone" class="form-control" size="4" maxlength="4" required title="" ng-model="newUser.phone2">
           </div>
           <div>
-            <button type="button" class="btn btn-primary btn-md" ng-click="addNewItem()">Add to Group</button>
-            <button type="button" class="btn btn-primary btn-md" data-ng-model="resetInput" ng-click="reset()">Reset</button>
+            <button type="button" class="btn btn-primary btn-md" ng-click="addNewItem()"><i class="fa fa-address-card" aria-hidden="true"> Add to Group</i></button>
+            <button type="button" class="btn btn-primary btn-md" data-ng-model="resetInput" ng-click="reset()" style=""><i class="fa fa-refresh"></i> Reset</button>
           </div>
         </div>
       </div>

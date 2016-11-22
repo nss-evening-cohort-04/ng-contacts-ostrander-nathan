@@ -10,7 +10,7 @@ $scope.newTask = {};
 		oneItem.id = itemId;
 		$scope.newTask = oneItem;
 	})
-	$scope.addNewItem = function(){
+	$scope.editContact = function(){
 		itemFactory.editItem($scope.newTask).then(function(respose){
 			$scope.newTask = {};
 			$location.url("/contacts/list");
